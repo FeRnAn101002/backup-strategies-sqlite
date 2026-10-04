@@ -172,7 +172,7 @@ export const descomprimir = (bytes) => transformar(bytes, new DecompressionStrea
 async function derivarClave(frase, sal) {
   const material = await crypto.subtle.importKey('raw', new TextEncoder().encode(frase), 'PBKDF2', false, ['deriveKey'])
   return crypto.subtle.deriveKey(
-    { name: 'PBKDF2', salt: sal, iterations: 210000, hash: 'SHA-256' },
+    { name: 'PBKDF2', salt: sal, iterations: 600000, hash: 'SHA-256' },
     material, { name: 'AES-GCM', length: 256 }, false, ['encrypt', 'decrypt'])
 }
 

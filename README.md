@@ -15,7 +15,7 @@ respaldo por bloques (pgBackRest *block incremental*, Litestream, Restic, Borg).
 - Calendario simulado: cada día se registran movimientos de inventario y se ejecuta el respaldo programado.
 - Tres políticas: *completo diario*, *completo dominical + diferencial*, *completo dominical + incremental*.
 - Comparación en vivo del **almacenamiento** de cada política y de las **piezas** necesarias para restaurar.
-- Cada respaldo se **comprime (gzip)** y se **cifra con AES-256-GCM** (clave derivada con PBKDF2-SHA-256, 210 000 iteraciones).
+- Cada respaldo se **comprime (gzip)** y se **cifra con AES-256-GCM** (clave derivada con PBKDF2-SHA-256, 600 000 iteraciones según OWASP).
 - Desastres: `DELETE` sin `WHERE`, `DROP TABLE` y **ransomware** que cifra el archivo.
 - Restauración desde los paquetes cifrados con verificación **SHA-256**, `PRAGMA integrity_check` y conteo de filas.
 - Botón 🗑 para "perder" un respaldo y ver cómo se **rompe la cadena incremental**.
